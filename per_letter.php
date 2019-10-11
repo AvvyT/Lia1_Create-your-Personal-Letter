@@ -12,7 +12,7 @@ if (isset($_POST['complete'])){
 }
 //$image = isset($_GET['image']) ? $_GET['image'] : FALSE;
 include "user_name.php";
-
+echo $fullName;
 if (isset($_POST['upload'])){
     $file_name = $_FILES['file']['name'];
     $file_type = $_FILES['file']['type'];
@@ -22,7 +22,7 @@ if (isset($_POST['upload'])){
             VALUES (NULL, '$file_name', '$file_type' )";
     $result = $sucess->query($sql) or die(mysqli_error($sucess));
 }
-echo "style.php";
+
 ?>
 
 <div class="pb_klart" style="background-color: <?php echo $color?>">

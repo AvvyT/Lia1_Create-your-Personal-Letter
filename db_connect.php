@@ -1,15 +1,28 @@
 <?php
+session_start();
 // skapa sql
+$host = 'localhost';
 $user = 'root';
 $password = 'root';
 $db = 'users_table';
-$host = 'localhost';
 
-$link = mysqli_init();
-$success = mysqli_real_connect(
-    $link,
+// Create connection
+$success = new mysqli(
     $host,
     $user,
     $password,
     $db
 );
+
+// Check connection
+if ($success->connect_error)
+{
+    die("Connection failed: " . $success->connect_error);
+}
+//if ($success) echo 'Connected to the database';
+
+
+
+
+
+

@@ -1,7 +1,4 @@
 <!-- page-1 -->
-<?php
-
-?>
 
 <h2 style="margin-bottom: 30%">Register</h2>
 <form class="pb-form" method="post" action="complete_form.php">

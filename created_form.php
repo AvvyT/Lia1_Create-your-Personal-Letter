@@ -1,4 +1,4 @@
-<!-- page-3 -->
+<!--register-page-3 -->
 <?php
  include "db_connect.php";
   $success;
@@ -63,6 +63,8 @@ if (isset($_POST['upload'])){
 </div>
 
 <?php
+include "css/created_style.php";
+
    $folder = "upload/";
    if (is_dir($folder)){
        while (($file = readdir($open)) != false){
@@ -72,31 +74,4 @@ if (isset($_POST['upload'])){
        closedir($open);
    }
 
-   echo "<style>
-     body, html{
-        box-sizing: border-box;
-        margin: 0 ;
-        text-align: center;
-        font-family: 'Indie Flower', cursive;
-        font-size: calc(10px + 1.5vmin);
-        }
-      .info-left{
-        font-weight: bold;
-        text-align: start;
-        padding: 35px;
-        }
-        .pb_klart{
-         padding-top: 10px;
-         padding-left: 10px;
-         min-height: 100vh;
-        }
-        .style_footer{
-        float: bottom;
-        }
-        .txt_body{
-        width: 450px;
-        text-align: center;
-        margin-left: 30%;
-        }
-        <style/>"
-?>
+

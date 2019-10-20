@@ -1,6 +1,6 @@
 <?php
 session_start();
-// skapa sql
+// skapa sql/**-- Authenticating Users--**/
 $host = 'localhost';
 $user = 'root';
 $password = 'root';

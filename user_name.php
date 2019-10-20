@@ -1,9 +1,9 @@
 <?php
 
-    if (isset($_POST['create'])) {
+    if (isset($_POST['fname']) && isset($_POST['lname']) ) {
         // echo 'User submitted';
-        $username = $_REQUEST['fname'];
-        $lastname = $_REQUEST['lname'];
+        $username = $_POST['fname'];
+        $lastname = $_POST['lname'];
 
         //echo $username;
         //header("Location: index.php?uploadedsucess"); =>då man bytter inte sidan

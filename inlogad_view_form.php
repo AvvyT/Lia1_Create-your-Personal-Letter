@@ -16,10 +16,24 @@ if ($result > 0){
     while ($rows=mysqli_fetch_assoc($result))
     {
 ?>
-
-<div class="pb_klart" value="<?php echo $rows['userId'];?>" style="background-color: <?php echo $rows['userpagescolor'];?>">
-        <h2>Personligt brev</h2>
-    <button class="btn"><a href="inlogad_edit_form.php?user=<?php echo $rows['username'];?>">Edit</a></button>
+        <!DOCTYPE html>
+        <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users-view Page</title>
+        <link rel="stylesheet" type="text/css" href="css/created_style.css">
+    </head>
+    <body>
+    <div class="pb_klart" value="<?php echo $rows['userId'];?>" style="background-color: <?php echo $rows['userpagescolor'];?>">
+        <nav class="navtop">
+            <div class="style">
+                <h2>Personligt brev</h2>
+                <a href="inlogad_edit_form.php?user=<?php echo $rows['username'];?>">Edit</a>
+                <a href="inlogad_form.php"><i class="fas fa-backward"></i> Back</a>
+                <a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+                <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </div>
+        </nav>
 
     <div class="info-left">
             <h3><?php echo $rows['username'];?></h3>
@@ -39,12 +53,13 @@ if ($result > 0){
             <h3><?php echo $rows['username'];?></h3>
             <br />
         </footer>
-</div>
+    </div>
+    </body>
+    </html>
 
         <?php
      }
     }
-include "css/created_style.php";
 
 
 

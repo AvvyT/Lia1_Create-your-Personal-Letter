@@ -1,6 +1,4 @@
-<?php
-echo "<style>
-      body, html{
+body, html{
         text-align: center;
         display:flex;
         font-family: 'Indie Flower', cursive;
@@ -11,26 +9,30 @@ echo "<style>
         justify-content: center;
         font-size: calc(10px + 2vmin);
         color: white;
-        }
-        .write, .btn{
+}
+
+.write, .btn{
         border-radius: 5px;
         font-size: 20px;
         border:2px solid aqua;
-        }
-        .btn{
+}
+
+.btn{
         font-size: medium;
-        }
-        p{
-        margin-top: 35%; 
+}
+
+p{
+        margin-top: 35%;
         color: aqua; 
         font-size: small; 
-        }
-        a{
+}
+
+a{
         color: white;
         text-decoration: none;
-        }
-        a:hover {
+}
+
+a:hover {
         cursor: pointer;
         color: aqua;
-        }
-      </style>";
+}

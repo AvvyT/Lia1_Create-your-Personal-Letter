@@ -23,7 +23,8 @@ VALUES ( '$username', '$pnum', '$adress', '$tel', '$email', '$body', '$color')";
 
 if (mysqli_query($success, $sql) === TRUE)
 {
-   echo "data saved";
+   //echo "data saved";
+    $saved='Document saved!';
 } else {
    echo "\n"."Error: " . $sql . "<br>" . mysqli_error($success);
 }
@@ -37,10 +38,25 @@ if (isset($_POST['upload'])){
     $file_store = "upload/" .$file_name;
 }
 ?>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Created Page</title>
+    <link rel="stylesheet" type="text/css" href="css/created_style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+<body>
 <div class="pb_klart" style="background-color: <?php echo $color?>; color: <?php echo $txtcolor?>">
     <form method="post" action="db_connect.php" enctype="multipart/form-data">
-        <h2>Personligt brev</h2>
+        <nav class="navtop">
+            <div class="style">
+                <h2>Personligt brev</h2>
+                <a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+                <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </div>
+        </nav>
+        <p><?php echo $saved?></p>
         <div class="info-left">
             <h3><?php echo $username?></h3>
             <p>Personnummer: <?php echo $pnum?></p>
@@ -61,9 +77,10 @@ if (isset($_POST['upload'])){
             </footer>
     </form>
 </div>
+</body>
+</html>
 
 <?php
-include "css/created_style.php";
 
    $folder = "upload/";
    if (is_dir($folder)){

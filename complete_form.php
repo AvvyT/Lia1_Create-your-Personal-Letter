@@ -25,17 +25,25 @@ if ($result->num_rows > 0) {
     }
 }
     //**-- Update data --**//
-  $newsql = mysqli_query("UPDATE users_table SET userphone= '".$_POST['phone']."', userdigits = '".$_POST['pnumber']."', useradress= '".$_POST['adress']."' WERE username = '" . $fullName . "' ");
+ /* $newsql = mysqli_query("UPDATE users_table SET userphone= '".$_POST['phone']."', userdigits = '".$_POST['pnumber']."', useradress= '".$_POST['adress']."' WERE username = '" . $fullName . "' ");
 
 if ($success->query($success,$newsql) === TRUE) {
     echo "Record updated successfully";
 } else {
     echo "Error updating record: " . $success->error;
-}
+}**/
 
 $success->close();
-    ?>
+?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Users-view Page</title>
+    <link rel="stylesheet" type="text/css" href="css/complete_style.css">
+</head>
+<body>
 <form class="pb-createform" method="post" action="created_form.php">
     <input type="hidden" name="id" value="<?php echo $userId?>" />
     <h2><input type="hidden" name="username" value="<?php echo $fullName?>"><?php echo $fullName?> Personal letter</h2>
@@ -50,28 +58,6 @@ $success->close();
     <input type="reset" class="btn" name="reset">
     <input type="submit" class="btn" name="complete" value="Save">
 </form>
+</body>
+</html>
 
-<?php
-echo "<style>
-              html{
-               text-align: center;
-               display:flex;
-               font-family: 'Indie Flower', cursive;
-               background-color: #282c34;
-               min-height: 100vh;
-               flex-direction: column;
-               align-items: center;
-               justify-content: center;
-               font-size: calc(10px + 2vmin);
-               color: white;
-             }
-             .write, .btn{
-               border-radius: 5px;
-               font-size: 20px;
-               border:2px solid aqua;
-             }
-             .btn{
-             font-size: medium;
-             }
-         <style/>";
-?>
